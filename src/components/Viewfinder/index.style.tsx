@@ -4,6 +4,7 @@ export const Root = styled.div`
   color: var(--foreground-rgb);
   display: flex;
   flex-direction: column;
+  justify-content: end;
   gap: 0.5rem;
   height: 86px;
   width: 288px;

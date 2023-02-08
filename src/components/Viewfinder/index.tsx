@@ -1,3 +1,4 @@
+import { useCalculatorContext } from '@/pages/context'
 import {
   Calculation,
   Equals,
@@ -7,12 +8,13 @@ import {
 } from './index.style'
 
 export const Viewfinder = () => {
+  const { numbers } = useCalculatorContext()
   return (
     <Root>
-      <Calculation>1 + 1</Calculation>
+      <Calculation>{numbers.viewfinder}</Calculation>
       <ResultContainer>
         <Equals>=</Equals>
-        <Result>2</Result>
+        <Result>{numbers.result}</Result>
       </ResultContainer>
     </Root>
   )

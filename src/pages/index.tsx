@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import { Main } from './index.style'
 import { Calculator } from '@/components/Calculator'
+import { CalculatorProvider } from '@/pages/context'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +16,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Main>
-        <Calculator />
+        <CalculatorProvider>
+          <Calculator />
+        </CalculatorProvider>
       </Main>
     </div>
   )
