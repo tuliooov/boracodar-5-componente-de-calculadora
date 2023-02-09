@@ -12,6 +12,7 @@ export const Root = styled.div`
 `
 
 export const Calculation = styled.p`
+  overflow: scroll;
   font-size: 20px;
   text-align: end;
   opacity: 0.3;
@@ -25,6 +26,9 @@ export const ResultContainer = styled.div`
 `
 
 export const Result = styled.p`
+  overflow: scroll;
+  width: 90%;
+  text-align: end;
   font-size: 2.25rem;
 `
 

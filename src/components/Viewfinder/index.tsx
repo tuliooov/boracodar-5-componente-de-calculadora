@@ -14,7 +14,7 @@ export const Viewfinder = () => {
       <Calculation>{numbers.viewfinder}</Calculation>
       <ResultContainer>
         <Equals>=</Equals>
-        <Result>{numbers.result}</Result>
+        <Result>{numbers.result.toLocaleString('pt-BR')}</Result>
       </ResultContainer>
     </Root>
   )
