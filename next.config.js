@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  styledComponents: true,
   reactStrictMode: true,
+  compiler: {
+    styledComponents: true,
+  },
   images: {
     loader: 'akamai',
     path: '',
