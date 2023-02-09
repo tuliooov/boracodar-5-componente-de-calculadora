@@ -1,19 +1,22 @@
 import { Button } from '../Button'
 import { Actions, Numbers, Root } from './index.style'
 
-export interface INumbersKeyBoards {
-  viewfinder: string
-  numberDigited: string | null
-  first: number
-  result: number
-  action: Key | null
+export interface INumbersKeyBoards  {
+  viewfinder: string;
+  historicViewFinder: string
+  lastKey: Key | null
+  lastType: KeyType | null
+  keyValue: string;
+  keyType: KeyType | null;
+  result: number;
 }
 
 export enum KeyType {
   'NUMBER',
   'OPERATOR',
   'EQUAL',
-  'CLEAR'
+  'CLEAR',
+  'COMMA'
 }
 
 export enum Key {
@@ -29,17 +32,23 @@ export enum Key {
   'NINE' = 9,
   'SUM' = '+',
   'MENUS' = '-',
+  'DIVISION' = '/',
+  'MULTIPLE' = 'x',
   'EQUAL' = '=',
   'CLEAR' = 'C',
+  'CLEAR_ELEMENT' = 'CE',
+  'PERCENTAGE' = '%',
+  'POSITIVE_NEGATIVE' = '+-',
+  'COMMA' = ',',
 }
 
 export const Keyboard = () => {
   return (
     <Root>
       <Numbers>
-        <Button label="CE" disabled />
+        <Button label={Key.CLEAR_ELEMENT} keyType={KeyType.CLEAR} />
         <Button label={Key.CLEAR} keyType={KeyType.CLEAR} />
-        <Button label="%" disabled />
+        <Button label={Key.PERCENTAGE} keyType={KeyType.OPERATOR} />
         <Button label={Key.SEVEN} keyType={KeyType.NUMBER} />
         <Button label={Key.EIGHT} keyType={KeyType.NUMBER} />
         <Button label={Key.NINE} keyType={KeyType.NUMBER} />
@@ -49,13 +58,13 @@ export const Keyboard = () => {
         <Button label={Key.ONE} keyType={KeyType.NUMBER} />
         <Button label={Key.TWO} keyType={KeyType.NUMBER} />
         <Button label={Key.THREE} keyType={KeyType.NUMBER} />
-        <Button label="+/-" disabled />
+        <Button label={Key.POSITIVE_NEGATIVE} keyType={KeyType.EQUAL} />
         <Button label={Key.ZERO} keyType={KeyType.NUMBER} />
-        <Button label="," disabled /> 
+        <Button label={Key.COMMA} keyType={KeyType.COMMA} /> 
       </Numbers>
       <Actions>
-        <Button label="/" disabled />
-        <Button label="x" disabled />
+        <Button label={Key.DIVISION} keyType={KeyType.OPERATOR} />
+        <Button label={Key.MULTIPLE} keyType={KeyType.OPERATOR}  />
         <Button label={Key.MENUS} keyType={KeyType.OPERATOR} />
         <Button label={Key.SUM} keyType={KeyType.OPERATOR} />
         <Button label={Key.EQUAL} keyType={KeyType.EQUAL} />

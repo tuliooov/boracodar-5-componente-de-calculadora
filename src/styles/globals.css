@@ -5,9 +5,10 @@
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 128, 126, 208;
-  --background-end-rgb: 128, 126, 208;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 128, 126, 208;
+    --background-end-rgb: 128, 126, 208;
+    --primary100: var(--background-start-rgb);
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -42,7 +43,8 @@
 
   /* EXTRA */
 
-  --background-calculator: #2D2A37;
+  --background-calculator: #d1d1d1;
+  --background-button: #c5c5c5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -51,6 +53,8 @@
     --background-start-rgb: 128, 126, 208;
     --background-end-rgb: 128, 126, 208;
 
+    --primary100: #4b4a89;
+    
     --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
     --secondary-glow: linear-gradient(
       to bottom right,
@@ -79,6 +83,7 @@
      /* EXTRA */
 
   --background-calculator: #2D2A37;
+  --background-button: #27262f;
 
   }
 
