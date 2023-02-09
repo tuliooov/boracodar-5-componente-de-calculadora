@@ -18,47 +18,62 @@ const DEFUALT_NUMBERS = {
 
 const CalculatorProvider = ({ children }: { children: ReactNode }) => {
   const [numbers, setNumbers] = useState<INumbersKeyBoards>(DEFUALT_NUMBERS)
+  console.log("🚀 ~ file: context.tsx:21 ~ CalculatorProvider ~ numbers", numbers)
 
   const onCreateOperation = (keyValue: Key) => {
+    if (keyValue !== numbers.action) {
+      const newNumber = {
+        ...numbers,
+        viewfinder: `${numbers.viewfinder} ${keyValue} `,
+        numberDigited: ``,
+        action: keyValue,
+      }
+      if (numbers.numberDigited) {
+        switch (keyValue) {
+          case Key.SUM:
+            newNumber.first = parseInt(numbers.numberDigited)
+            newNumber.result = numbers.result + parseInt(numbers.numberDigited)
+            break
+          case Key.MENUS:
+            newNumber.first = parseInt(numbers.numberDigited)
+            if (numbers.first) {
+              newNumber.result =
+                numbers.result - parseInt(numbers.numberDigited)
+            }
+            break
+
+          default:
+            break
+        }
+      }
+      return newNumber
+    }
+
+    return numbers
+  }
+
+  const onCreateNumber = (keyValue: Key) => {
     const newNumber = {
       ...numbers,
-      viewfinder: `${numbers.viewfinder} ${keyValue} `,
-      numberDigited: ``,
-      action: keyValue,
+      action: null,
     }
-    if (numbers.numberDigited) {
-      switch (keyValue) {
-        case Key.SUM:
-          newNumber.first = parseInt(numbers.numberDigited)
-          newNumber.result = numbers.result + parseInt(numbers.numberDigited)
-          break
-        case Key.MENUS:
-          newNumber.first = parseInt(numbers.numberDigited)
-          if (numbers.first) {
-            newNumber.result = numbers.result - parseInt(numbers.numberDigited)
-          }
-          break
-
-        default:
-          break
-      }
+    if (numbers.action === Key.EQUAL) {
+      newNumber.viewfinder = `${keyValue}`
+      newNumber.numberDigited = `${keyValue}`
+      newNumber.result = 0
+    } else {
+      newNumber.viewfinder = `${numbers.viewfinder}${keyValue}`
+      newNumber.numberDigited = `${numbers.numberDigited}${keyValue}`
     }
-
     return newNumber
   }
 
   const onClickButton = (keyValue: Key, typeValue: KeyType) => () => {
     switch (typeValue) {
       case KeyType.NUMBER:
-        setNumbers({
-          ...numbers,
-          viewfinder: `${numbers.viewfinder}${keyValue}`,
-          numberDigited: `${numbers.numberDigited}${keyValue}`,
-        })
+        setNumbers(onCreateNumber(keyValue))
         break
       case KeyType.OPERATOR:
-        // eslint-disable-next-line no-case-declarations
-
         setNumbers(onCreateOperation(keyValue))
         break
       case KeyType.EQUAL:

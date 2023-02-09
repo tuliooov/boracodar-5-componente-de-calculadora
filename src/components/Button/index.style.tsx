@@ -11,11 +11,4 @@ export const Root = styled.button`
   box-shadow: 0px 0px 4px 1px #00000040;
   font-size: 1.5rem;
   cursor: pointer;
-
-  :hover {
-    opacity: 0.6;
-  }
-  :active {
-    opacity: 0.4;
-  }
 `
