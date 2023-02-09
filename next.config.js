@@ -6,8 +6,8 @@ const nextConfig = {
     loader: 'akamai',
     path: '',
   },
-  basePath: '/one-chat-challenge-4-bora-codar',
-  assetPrefix: '/one-chat-challenge-4-bora-codar',
+  basePath: '/calculator-challenge-5-bora-codar',
+  assetPrefix: '/calculator-challenge-5-bora-codar',
 }
 
 module.exports = nextConfig
