@@ -2,6 +2,14 @@
   "name": "calculator-challenge-5-bora-codar",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://tuliooov.github.io/calculator-challenge-5-bora-codar",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuliooov/calculator-challenge-5-bora-codar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tuliooov/calculator-challenge-5-bora-codar/issues"
+  },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "touch ./out/.nojekyll && gh-pages -d out -t true",
