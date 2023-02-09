@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes } from 'react'
-import { useCalculatorContext } from '../../pages/context'
+import { useCalculatorContext } from '../../contexts/context'
 import { Key, KeyType } from '../Keyboard'
 import { Root } from './index.style'
 

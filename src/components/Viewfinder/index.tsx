@@ -1,4 +1,4 @@
-import { useCalculatorContext } from '@/pages/context'
+import { useCalculatorContext } from '@/contexts/context'
 import {
   Calculation,
   Equals,

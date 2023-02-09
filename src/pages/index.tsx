@@ -1,8 +1,13 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
-import { Main, OpenCalculator, Texts, TextsContainer } from './index.style'
+import {
+  Main,
+  OpenCalculator,
+  Texts,
+  TextsContainer,
+} from '../styles/home.style'
 import { Calculator } from '@/components/Calculator'
-import { CalculatorProvider } from '@/pages/context'
+import { CalculatorProvider } from '@/contexts/context'
 import { useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
