@@ -1,5 +1,5 @@
 
-## Challenge 05 - Calculator - <a href="https://boracodar.dev/#">#BoraCodar</a>
+## Challenge 05 - Calculator - <a href="https://www.rocketseat.com.br/boracodar/desafios-anteriores/uma-calculadora-desafio-05">#BoraCodar</a>
 Develop a desktop calculator, which can be responsive.
 
 
@@ -21,4 +21,4 @@ Develop a desktop calculator, which can be responsive.
 https://www.figma.com/file/7xEfKvqisFgmYzyi7ZK7aU/%23boraCodar---Desafio-5-(Community)?node-id=0%3A1&t=SWekUqJsgttKhtWy-0
 
 ## Deployed
-- https://tuliooov.github.io/calculator-challenge-5-bora-codar/
+- https://tuliooov.github.io/boracodar-5-componente-de-calculadora/
